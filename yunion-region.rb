@@ -12,7 +12,7 @@ class YunionRegion < Formula
 
     (buildpath/"src/yunion.io/x/onecloud").install buildpath.children
     cd buildpath/"src/yunion.io/x/onecloud" do
-      system "GOOS=darwin " "make", "cmd/region"
+      system "make", "GOOS=darwin", "cmd/region"
       bin.install "_output/bin/region"
       prefix.install_metafiles
     end
