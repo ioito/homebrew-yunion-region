@@ -1,7 +1,6 @@
 class YunionRegion < Formula
   desc "Yunion Cloud Region Controller V2 Service"
   homepage "https://github.com/yunionio/onecloud.git"
-  url "https://github.com/yunionio/onecloud.git"
   version_scheme 1
   head "https://github.com/yunionio/onecloud.git",
     :branch      => "master"
