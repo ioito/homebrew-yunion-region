@@ -1,11 +1,11 @@
 class YunionRegion < Formula
   desc "Yunion Cloud Region Controller V2 Service"
   homepage "https://github.com/yunionio/onecloud.git"
-  url "https://github.com/yunionio/onecloud.git",
-    :tag      => "release/2.10.0"
+  url "https://github.com/yunionio/onecloud.git"
   version_scheme 1
-  head "https://github.com/yunionio/onecloud.git"
-
+  head "https://github.com/yunionio/onecloud.git",
+    :branch      => "master"
+  
   depends_on "go" => :build
 
   def install
@@ -13,7 +13,7 @@ class YunionRegion < Formula
 
     (buildpath/"src/yunion.io/x/onecloud").install buildpath.children
     cd buildpath/"src/yunion.io/x/onecloud" do
-      system "make", "cmd/region"
+      system "GOOS=darwin " "make", "cmd/region"
       bin.install "_output/bin/region"
       prefix.install_metafiles
     end
